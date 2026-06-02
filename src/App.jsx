@@ -2,21 +2,21 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import Cart from "./components/Cart"; // 🌟 Próximo componente a crear
-import { CartProvider } from "./context/CartContext"; // 🌟 Importamos el proveedor global
+import Cart from "./components/Cart";
+import Contacto from "./components/Contacto";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <CartProvider> {/* 🌟 Envolvemos toda la App aquí */}
+    <CartProvider>
       <div className="bg-light min-vh-100">
         <NavBar />
-        
         <Routes>
           <Route path="/" element={<ItemListContainer greeting="Hub de Soluciones Tecnológicas" />} />
           <Route path="/category/:categoryId" element={<ItemListContainer greeting="Servicios Especializados" />} />
           <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-          <Route path="/cart" element={<Cart />} /> {/* 🌟 Ruta del carrito habilitada */}
-          
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/contacto" element={<Contacto />} />
           <Route 
             path="*" 
             element={
