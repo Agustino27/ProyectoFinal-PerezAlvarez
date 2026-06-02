@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { servicesMock } from "../servicesMock";
+import { db } from "../services/firebase";
+import { doc, getDoc } from "firebase/firestore";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
@@ -11,24 +12,27 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     setLoading(true);
 
-    const getProduct = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(servicesMock.find((prod) => prod.id === itemId));
-      }, 500);
-    });
+    const docRef = doc(db, "products", itemId);
 
-    getProduct.then((data) => {
-      setProduct(data);
-      setLoading(false);
-    });
+    getDoc(docRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setProduct({ id: snapshot.id, ...snapshot.data() });
+        } else {
+          setProduct(null);
+        }
+      })
+      .catch((error) => console.error("Error fetching product:", error))
+      .finally(() => setLoading(false));
   }, [itemId]);
 
   if (loading) {
     return (
-      <div className="d-flex justify-content-center my-5 p-5">
+      <div className="container text-center mt-5 p-5">
         <div className="spinner-border text-primary" role="status">
           <span className="visually-hidden">Cargando detalles...</span>
         </div>
+        <p className="mt-3 text-secondary">Extrayendo especificaciones técnicas del servicio...</p>
       </div>
     );
   }
@@ -36,13 +40,17 @@ const ItemDetailContainer = () => {
   if (!product) {
     return (
       <div className="container text-center mt-5 p-5">
-        <h3>Servicio no encontrado</h3>
-        <p className="text-muted">El código de consultoría ingresado no existe.</p>
+        <h2>Servicio no localizado</h2>
+        <p className="text-muted">El identificador de la solución no coincide con nuestros registros activos.</p>
       </div>
     );
   }
 
-  return <ItemDetail product={product} />;
+  return (
+    <div className="container mt-5">
+      <ItemDetail product={product} />
+    </div>
+  );
 };
 
 export default ItemDetailContainer;
