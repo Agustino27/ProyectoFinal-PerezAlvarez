@@ -1,16 +1,44 @@
-# React + Vite
+# Digital Mensa - Hub de Soluciones Tecnológicas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+E-commerce de grado corporativo especializado en el ecosistema B2B, diseñado para la preventa de consultorías avanzadas en CRM y desarrollo de Single Page Applications (SPA). Esta plataforma asíncrona implementa una arquitectura modular desacoplada construida sobre React y orquestada con servicios en la nube en tiempo real mediante Firebase Firestore.
 
-Currently, two official plugins are available:
+## 🚀 Enlaces del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Repositorio Oficial:** [https://github.com/Agustino27/ProyectoFinal-PerezAlvarez](https://github.com/Agustino27/ProyectoFinal-PerezAlvarez)
+* **Memoria Técnica de Ingeniería (Google Doc Exigido):** [Enlace al Google Doc que configuraste en modo público]
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Stack Tecnológico Utilizado
 
-## Expanding the ESLint configuration
+* **Library Base:** React 19 (Modo Concurrente nativo)
+* **Build Tool:** Vite 8 (Estructura de bundle optimizada de alta velocidad)
+* **Routing:** React Router Dom (Navegación SPA fluida mediante Hooks parametrizados)
+* **State Management:** React Context API (Persistencia global del carrito de compras)
+* **Styling & UI:** Bootstrap (Grillas fluidas, componentes adaptables y estilos limpios)
+* **Cloud Database & BaaS:** Firebase Firestore (Almacenamiento e ingesta de datos asíncronos)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📁 Arquitectura del Proyecto
+
+La estructura de directorios sigue estrictamente el patrón modular de componentización y la separación formal de responsabilidades exigidas por la academia:
+
+```text
+src/
+├── components/          # Componentes de presentación visual (Presenters)
+│   ├── Cart.jsx
+│   ├── Checkout.jsx
+│   ├── Item.jsx
+│   ├── ItemCount.jsx
+│   ├── ItemDetail.jsx
+│   ├── ItemList.jsx
+│   ├── ItemListContainer.jsx  # Contenedor de datos masivos (Container)
+│   ├── ItemDetailContainer.jsx # Contenedor de detalle específico (Container)
+│   └── NavBar.jsx
+├── context/             # Lógica de estados globales
+│   └── CartContext.jsx
+├── services/            # Inicialización de servicios externos e infraestructura
+│   └── firebase.js
+├── App.jsx              # Enrutador central y pasarela de layouts
+└── main.jsx             # Punto de entrada al DOM virtual de React
