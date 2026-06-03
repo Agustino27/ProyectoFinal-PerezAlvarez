@@ -47,22 +47,20 @@ src/
 🔐 Configuración del entorno local (.env)
 Para conectar la aplicación con Firebase sin exponer credenciales, crear un archivo .env en la raíz del proyecto (no se sube al repositorio; debe estar en .gitignore). Las variables son consumidas desde src/services/firebase.js usando import.meta.env.
 
-Crear el archivo .env en la raíz del proyecto.
-
-Completar con los siguientes nombres esperados:
-
-Ini, TOML
 VITE_FIREBASE_API_KEY=tu_api_key_aqui
 VITE_FIREBASE_AUTH_DOMAIN=tu_auth_domain_aqui
 VITE_FIREBASE_PROJECT_ID=tu_project_id_aqui
 VITE_FIREBASE_STORAGE_BUCKET=tu_storage_bucket_aqui
 VITE_FIREBASE_MESSAGING_SENDER_ID=tu_messaging_sender_id_aqui
 VITE_FIREBASE_APP_ID=tu_app_id_aqui
+
+
 Ejecutar el proyecto en la terminal:
 
 Bash
 npm install
 npm run dev
+
 🌟 Características Principales (Features) y Guía de Uso
 Catálogo desde Firestore: Filtrado dinámico por categorías corporativas a través de la URL mediante captura reactiva de useParams. Prueba ingresando a las distintas categorías de la barra de navegación para ver cómo muta el catálogo.
 
@@ -89,5 +87,6 @@ Abrí la terminal en VS Code y escribí estos tres comandos para sobreescribir e
 
 ```bash
 git add README.md
-git commit -m "docs: finalize complete readme with coderhouse guidelines and deployment links"
-git push origin main --force
+git commit -m "docs: update readme"
+git push origin main
+
