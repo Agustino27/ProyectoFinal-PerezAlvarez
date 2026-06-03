@@ -45,7 +45,8 @@ src/
 └── main.jsx             # Punto de entrada al DOM virtual de React
 
 🔐 Configuración del entorno local (.env)
-Para conectar la aplicación con Firebase sin exponer credenciales, crear un archivo .env en la raíz del proyecto (no se sube al repositorio; debe estar en .gitignore). Las variables son consumidas desde src/services/firebase.js usando import.meta.env.
+Para conectar la aplicación con Firebase sin exponer credenciales, crear un archivo .env en la raíz del proyecto,
+(no se sube al repositorio; debe estar en .gitignore). Las variables son consumidas desde src/services/firebase.js usando import.meta.env.
 
 VITE_FIREBASE_API_KEY=tu_api_key_aqui
 VITE_FIREBASE_AUTH_DOMAIN=tu_auth_domain_aqui
