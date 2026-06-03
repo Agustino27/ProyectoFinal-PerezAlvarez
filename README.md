@@ -5,7 +5,7 @@ E-commerce de grado corporativo especializado en el ecosistema B2B, diseñado pa
 ## 🚀 Enlaces del Proyecto
 
 * **Repositorio Oficial:** [https://github.com/Agustino27/ProyectoFinal-PerezAlvarez](https://github.com/Agustino27/ProyectoFinal-PerezAlvarez)
-* **Memoria Técnica de Ingeniería (Google Doc Exigido):** [Enlace al Google Doc que configuraste en modo público]
+* **Memoria Técnica de Ingeniería (Google Doc Exigido):** [https://docs.google.com/document/d/1dsSAvLALfHv0HDnPYx6nuHA1fbvFfzpJ0Wk3Z9WjdaU/edit?usp=sharing]
 
 ---
 
