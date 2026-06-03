@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBHzZdfBGFn7BmcwAdkGjOTyN4USWxJD5g",
-  authDomain: "digital-mensa.firebaseapp.com",
-  projectId: "digital-mensa",
-  storageBucket: "digital-mensa.firebasestorage.app",
-  messagingSenderId: "530676797746",
-  appId: "1:530676797746:web:addcc809a1b4b910ba872b"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
